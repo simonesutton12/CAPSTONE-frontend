@@ -1,24 +1,25 @@
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import NutritionGoals from './pages/nutritiongoals';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import PersonalPlans from './pages/personalplans';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Nutrition Decision</h1>
-        <button>Welcome</button>  
-      </header>
-      <Router>
-          <Routes>
-      
-          <Route path="/" component={Homepage} />
-          <Route path="/nutritiongoals" component={NutritionGoals} /> 
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <h1>Nutrition Decision</h1>
+        </header>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/nutritiongoals" element={<NutritionGoals />} />
+          <Route path="/personalplans" element={<PersonalPlans />} />
         </Routes>
-      </Router>
-    </div>
+      </div>
+    </Router>
   );
 }
 

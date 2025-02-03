@@ -1,6 +1,7 @@
 import React from 'react';
 
 function Dashboard() {
+  console.log('Dashboard component rendered');
   return (
     <div>
       <h2>Dashboard</h2>

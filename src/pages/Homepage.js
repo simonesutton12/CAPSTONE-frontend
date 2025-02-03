@@ -6,7 +6,7 @@ function Home() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/data') // Replace '/api/data' with your actual API endpoint
+    axios.get('/api/data')
       .then(response => {
         setData(response.data);
       })
@@ -33,3 +33,19 @@ function Home() {
 }
 
 export default Home;
+
+const axiosConfig = {
+    headers: {
+      'Authorization': 'Bearer your_token_here',
+      // Include other necessary headers but keep them as minimal as possible
+    }
+  };
+  
+  axios.get('/your-endpoint', axiosConfig)
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => {
+      console.error('There was an error fetching the data!', error);
+    });
+  
