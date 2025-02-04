@@ -37,7 +37,6 @@ export default Home;
 const axiosConfig = {
     headers: {
       'Authorization': 'Bearer your_token_here',
-      // Include other necessary headers but keep them as minimal as possible
     }
   };
   
