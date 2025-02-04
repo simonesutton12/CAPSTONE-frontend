@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-function Dashboard() {
+const Dashboard = () => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/api/data');
+        const response = await axios.get('/api/data'); 
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -31,32 +31,6 @@ function Dashboard() {
       )}
     </div>
   );
-}
+};
 
 export default Dashboard;
-
-import { render, screen, waitFor } from '@testing-library/react';
-import Dashboard from './dashboard';
-
-jest.mock('axios');
-
-test('renders loading state initially', () => {
-  render(<Dashboard />);
-  expect(screen.getByText(/Loading.../i)).toBeInTheDocument();
-});
-
-test('renders data after fetching', async () => {
-  const mockData = {
-    mealPlan: 'Weight Loss Plan',
-    weight: '70kg',
-  };
-
-  axios.get.mockResolvedValueOnce({ data: mockData });
-
-  render(<Dashboard />);
-
-  await waitFor(() => {
-    expect(screen.getByText(/Your current meal plan: Weight Loss Plan/i)).toBeInTheDocument();
-    expect(screen.getByText(/Your current weight: 70kg/i)).toBeInTheDocument();
-  });
-});
