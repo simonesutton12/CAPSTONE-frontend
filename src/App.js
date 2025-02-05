@@ -3,7 +3,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Homepage';
 import PersonalPlans from './pages/personalplans';
 import About from './pages/about';
-import Profile from './pages/profile';
+import UserProfile from './components/UserProfile';
+import CustomMeals from './components/CustomMeals'
+
+
+
+
 
 function App() {
     return (
@@ -18,10 +23,12 @@ function App() {
                     </ul>
                 </nav>
                 <Routes>
+                  <Route path="/custom-meals" element={<CustomMeals />} />
                     <Route path="/" element={<Home />} />
                     <Route path="/personal-plans" element={<PersonalPlans />} />
                     <Route path="/about" element={<About />} />
-                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/profile" element={<UserProfile />} />
+                    
                 </Routes>
             </div>
         </Router>
