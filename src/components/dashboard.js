@@ -9,10 +9,14 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchMealPlans = async () => {
       try {
-        const response = await axios.get('/api/plans'); 
+        const response = await axios.get('/api/custom-meal-plans', {
+          headers: {
+            'Custom-Header': 'value'
+          }
+        });
         setMealPlans(response.data);
       } catch (error) {
-        console.error('Error fetching meal plans:', error);
+        console.error('Error fetching custom meal plans:', error);
       } finally {
         setLoading(false);
       }

@@ -1,0 +1,44 @@
+.about {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.about-header {
+  margin-bottom: 40px;
+}
+
+.about-header h1 {
+  font-size: 2.5em;
+  color: #007bff;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-content p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #6c757d;
+}
+
+.about-content h2 {
+  font-size: 2em;
+  color: #007bff;
+  margin-top: 20px;
+}
+
+.about-content ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.about-content ul li {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: #6c757d;
+}

@@ -28,6 +28,8 @@ function App() {
                     <Route path="/personal-plans" element={<PersonalPlans />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/profile" element={<UserProfile />} />
+                    <Route path="/" exact component={PersonalPlans} />
+          <Route path="/user-profile/:planId" component={UserProfile} />
                     
                 </Routes>
             </div>
