@@ -43,10 +43,7 @@ function PersonalPlans() {
 
   const handleAddToProfile = () => {
     const selectedMealPlan = data.find(plan => plan.id === parseInt(selectedPlan));
-    navigate({
-      pathname: `/user-profile/${selectedPlan}`,
-      state: { weight, mealPlan: selectedMealPlan }
-    });
+    navigate(`/user-profile/${selectedPlan}`, { state: { weight, mealPlan: selectedMealPlan } });
   };
 
   return (
