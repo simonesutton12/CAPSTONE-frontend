@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Homepage from './pages/Homepage';
-import NutritionGoals from './pages/nutritiongoals';
 import PersonalPlans from './pages/personalplans';
 import UserProfile from './components/UserProfile';
 import CustomMeals from './components/CustomMeals';
