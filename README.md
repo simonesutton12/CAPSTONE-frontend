@@ -10,37 +10,6 @@ React: A JavaScript library for building user interfaces.
 Axios: A promise-based HTTP client for making API requests.
 Spoonacular API: A food-related API used to fetch meal data, including nutrition facts and images.
 CSS: For styling the app.
-Setup Instructions
-Prerequisites
-Ensure you have the following installed:
-
-Node.js (v14 or higher)
-npm (Node Package Manager)
-1. Clone the repository
-bash
-Copy
-https://github.com/simonesutton12/CAPSTONE-frontend/edit/main/README.md
-3. Navigate to the project folder
-bash
-Copy
-cd personal-nutrition-plans
-4. Install dependencies
-Run the following command to install all necessary dependencies:
-
-bash
-Copy
-npm install
-4. Set up environment variables
-Create a .env file in the root of the project and add your Spoonacular API key:
-
-ini
-Copy
-REACT_APP_SPOONACULAR_API_KEY=your_api_key_here
-5. Run the development server
-bash
-Copy
-npm start
-This will start the app in development mode. Open your browser and go to http://localhost:3000 to see the app in action.
 
 How to Use
 Enter your weight in the input field (in kilograms).
