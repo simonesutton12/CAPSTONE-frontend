@@ -19,12 +19,12 @@ npm (Node Package Manager)
 1. Clone the repository
 bash
 Copy
-git clone https://github.com/your-username/personal-nutrition-plans.git
-2. Navigate to the project folder
+https://github.com/simonesutton12/CAPSTONE-frontend/edit/main/README.md
+3. Navigate to the project folder
 bash
 Copy
 cd personal-nutrition-plans
-3. Install dependencies
+4. Install dependencies
 Run the following command to install all necessary dependencies:
 
 bash
