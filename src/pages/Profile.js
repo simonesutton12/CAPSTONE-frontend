@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Profile from '../components/Profile';
+import Profile from './pages/Profile';
 import axios from 'axios';
 import dotenv from 'dotenv';
 

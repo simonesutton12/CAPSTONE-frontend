@@ -1,30 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './CustomMeals.css';
+import React, { useState } from 'react';
 
-const CustomMeals = () => {
-  const [mealPlans, setMealPlans] = useState([]);
+function CustomMeals() {
+  const [mealName, setMealName] = useState('');
+  const [calories, setCalories] = useState('');
+  const [meals, setMeals] = useState([]);
 
-  useEffect(() => {
-    axios.get('/api/meals')
-      .then(response => setMealPlans(response.data))
-      .catch(error => console.error('Error fetching meal plans:', error));
-  }, []);
+  const handleAddMeal = () => {
+    const newMeal = { mealName, calories };
+    setMeals([...meals, newMeal]);
+    setMealName('');
+    setCalories('');
+  };
 
   return (
-    <div className="custom-meals">
-      <h2>Custom Meal Plans</h2>
+    <div>
+      <h2>Add Custom Meals</h2>
+      <input
+        type="text"
+        placeholder="Meal Name"
+        value={mealName}
+        onChange={(e) => setMealName(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Calories"
+        value={calories}
+        onChange={(e) => setCalories(e.target.value)}
+      />
+      <button onClick={handleAddMeal}>Add Meal</button>
       <ul>
-        {mealPlans.map(meal => (
-          <li key={meal._id}>
-            <h3>{meal.name}</h3>
-            <p>{meal.description}</p>
-            <p>Calories: {meal.calories}</p>
+        {meals.map((meal, index) => (
+          <li key={index}>
+            {meal.mealName} - {meal.calories} calories
           </li>
         ))}
       </ul>
     </div>
   );
-};
+}
 
 export default CustomMeals;
