@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
- 
+import './styles/users.css'; // Updated import path
 
 function Users() {
   const [users, setUsers] = useState([]);
