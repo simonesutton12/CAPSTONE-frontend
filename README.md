@@ -59,30 +59,7 @@ targetCalories: The target number of calories (calculated based on the user's we
 timeFrame: The time frame for the meal plan (e.g., "day").
 Note: You need to replace your_api_key_here with your actual Spoonacular API key in the .env file.
 
-Folder Structure
-bash
-Copy
-personal-nutrition-plans/
-│
-├── public/
-│   └── index.html
-│
-├── src/
-│   ├── components/
-│   │   └── PersonalPlans.js
-│   ├── styles/
-│   │   └── PersonalPlans.css
-│   ├── App.js
-│   ├── index.js
-│   └── ...
-│
-├── .env
-├── package.json
-└── README.md
-Contributing
-Feel free to fork this project and submit pull requests. If you find any bugs or issues, please open an issue so we can improve the app!
 
-License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 Acknowledgments
