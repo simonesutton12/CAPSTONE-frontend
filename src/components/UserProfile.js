@@ -9,72 +9,45 @@ const UserProfile = () => {
   const { weight, mealPlan } = location.state || {};
   const [plan, setPlan] = useState(mealPlan || null);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(!mealPlan);
 
   useEffect(() => {
-<<<<<<< HEAD
     console.log('planId:', planId);
     console.log('mealPlan:', mealPlan);
 
     if (!plan) {
       const fetchPlan = async () => {
         try {
-          const response = await axios.get(`https://api.spoonacular.com/recipes/`, {
-=======
-    if (!plan) {
-      const fetchPlan = async () => {
-        try {
-          const response = await axios.get(`https://api.spoonacular.com/recipes/${planId}/information`, {
->>>>>>> ca8999262f6db943eaff7b8c7281f7adca1c8958
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer cac2854bf30643a9bffd81eebcf0a1b8`
-            }
-          });
-<<<<<<< HEAD
-          console.log('API response:', response.data);
-=======
->>>>>>> ca8999262f6db943eaff7b8c7281f7adca1c8958
+          const response = await axios.get(`https://api.spoonacular.com/recipes/${planId}`);
           setPlan(response.data);
+          setLoading(false);
         } catch (error) {
-          console.error('Error fetching plan details:', error);
-          setError('Failed to fetch plan details. Please try again later.');
+          setError('An error occurred while fetching the plan data.');
+          setLoading(false);
         }
       };
 
       fetchPlan();
     }
-<<<<<<< HEAD
-  }, [planId, plan, mealPlan]);
-
-  useEffect(() => {
-    console.log('Current plan state:', plan);
-  }, [plan]);
-
-  return (
-    <div className="UserProfile">
-=======
-  }, [planId, plan]);
+  }, [planId, mealPlan, plan]);
 
   return (
     <div className="user-profile">
->>>>>>> ca8999262f6db943eaff7b8c7281f7adca1c8958
       {error && <p className="error">{error}</p>}
-      {plan ? (
-        <div>
-          <h2>{plan.title}</h2>
-          <p>Ready in {plan.readyInMinutes} minutes</p>
-          <p>Servings: {plan.servings}</p>
-<<<<<<< HEAD
-          {plan.nutrition && <p>Calories: {plan.nutrition.calories}</p>}
-=======
-          <p>Calories: {plan.nutrition.calories}</p>
->>>>>>> ca8999262f6db943eaff7b8c7281f7adca1c8958
-          <img src={plan.image} alt={plan.title} />
-          <p>{plan.summary}</p>
-          <p>User Weight: {weight} lbs</p>
-        </div>
-      ) : (
+      {loading ? (
         <p>Loading...</p>
+      ) : (
+        plan && (
+          <div>
+            <h2>{plan.title}</h2>
+            <p>Ready in {plan.readyInMinutes} minutes</p>
+            <p>Servings: {plan.servings}</p>
+            <p>Calories: {plan.nutrition?.calories}</p>
+            {plan.image && <img src={plan.image} alt={plan.title || 'Plan Image'} />}
+            <p>{plan.summary}</p>
+            <p>User Weight: {weight} lbs</p>
+          </div>
+        )
       )}
     </div>
   );

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React, { useState, useEffect } from 'react';
-=======
-import React, { useState } from 'react';
->>>>>>> ca8999262f6db943eaff7b8c7281f7adca1c8958
+import React, { useState, useEffect } from 'react'; // Keep useEffect if it's needed
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './PersonalPlans.css';
@@ -16,12 +12,7 @@ function PersonalPlans() {
   const navigate = useNavigate();
 
   const fetchData = async (userWeight) => {
-<<<<<<< HEAD
-    const apiKey = 'cac2854bf30643a9bffd81eebcf0a1b8'; 
-=======
     const apiKey = 'cac2854bf30643a9bffd81eebcf0a1b8'; // Use the provided API key
->>>>>>> ca8999262f6db943eaff7b8c7281f7adca1c8958
-
     try {
       const response = await axios.get('https://api.spoonacular.com/mealplanner/generate', {
         headers: {
@@ -33,30 +24,16 @@ function PersonalPlans() {
           timeFrame: 'day'
         }
       });
-      setData(response.data.meals);
+      setData(response.data.meals); // Update state with fetched data
       console.log('Data fetched successfully:', response.data);
     } catch (error) {
       if (error.response) {
-<<<<<<< HEAD
-        setError(error.response.data.message);
+        setError(error.response.data.message); // Set error message from response
       } else {
-        setError('An error occurred while fetching data.');
-=======
-        // The server responded with a status other than 200 range
-        console.error('Server responded with an error:', error.response.status, error.response.data);
-        setError(`Server responded with an error: ${error.response.status}`);
-      } else if (error.request) {
-        // The request was made but no response was received
-        console.error('No response received:', error.request);
-        setError('No response received from the server.');
-      } else {
-        // Something happened in setting up the request
-        console.error('Error setting up request:', error.message);
-        setError(`Error setting up request: ${error.message}`);
->>>>>>> ca8999262f6db943eaff7b8c7281f7adca1c8958
+        setError('An error occurred while fetching data.'); // Set generic error message
       }
     } finally {
-      setLoading(false);
+      setLoading(false); // Set loading state to false
     }
   };
 

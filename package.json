@@ -5,12 +5,9 @@
   "dependencies": {
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
-<<<<<<< HEAD
     "dotenv": "^10.0.0",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
-=======
->>>>>>> ca8999262f6db943eaff7b8c7281f7adca1c8958
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.5",
