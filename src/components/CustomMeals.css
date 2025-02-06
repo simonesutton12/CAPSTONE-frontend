@@ -1,0 +1,36 @@
+.custom-meals {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.custom-meals h2 {
+    margin-top: 0;
+    font-size: 2em;
+    color: #007bff;
+}
+
+.custom-meals ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.custom-meals li {
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-meals h3 {
+    margin: 0
+}
+
+.custom-meals .error {
+    color: red;
+}

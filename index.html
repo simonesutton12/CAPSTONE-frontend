@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutrition Decision</title>
+</head>
+<body>
+  <h1>Nutrition Decision</h1>
+  <button id="fetchData">Fetch Data</button>
+  <div id="data"></div>
+
+  <script>
+    document.getElementById('fetchData').addEventListener('click', async () => {
+      try {
+        const response = await fetch('http://localhost:5000/');
+        const data = await response.text();
+        document.getElementById('data').innerText = data;
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    });
+  </script>
+</body>
+</html>

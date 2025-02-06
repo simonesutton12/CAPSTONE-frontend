@@ -1,0 +1,30 @@
+.dashboard {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.meal-plans-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.meal-plan-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+}
+
+.meal-plan-item h2 {
+  margin: 0 0 10px;
+}
+
+.meal-plan-item p {
+  margin: 0;
+}
