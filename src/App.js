@@ -30,7 +30,7 @@ function App() {
                     <Route path="/about" element={<About />} />
                     <Route path="/user-profile/:planId" element={<UserProfile />} />
                     <Route path="*" element={<h1>Custom Meal Plans</h1>} />
-                    
+                
                 </Routes>
             </div>
         </Router>
